@@ -253,7 +253,7 @@ class User extends Model {
 					
 				}				
 																			//assunto do email	
-				$mailer = new Mailer($data['desemail'], $data['desperson'], "Redefinir senha da Administracao", "forgot", array(
+				$mailer = new Mailer($data['desemail'], $data['desperson'], "Redefinir senha do Site Michael T.I.", "forgot", array(
 					"name"=>$data['desperson'],
 					"link"=>$link
 				));

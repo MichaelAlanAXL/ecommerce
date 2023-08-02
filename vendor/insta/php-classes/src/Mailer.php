@@ -7,7 +7,7 @@ use Rain\Tpl;
 class Mailer {
 	
 	const USERNAME = "";	//Your email here
-	const NAME_FROM = "";
+	const NAME_FROM = "Michael T.I.";
 
 	private $email;	
 
