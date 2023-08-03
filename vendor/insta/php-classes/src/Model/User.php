@@ -166,10 +166,16 @@ class User extends Model {
 
 	}
 
-	public function update()
+	public function update($passwordHash = true)
 	{
 
 		$sql = new Sql();
+
+		if ($passwordHash) {
+			$password = User::getPasswordHash($this->getdespassword());
+		} else {
+			$password = $this->getdespassword();
+		}
 
 		$results = $sql->select("CALL sp_usersupdate_save(:iduser, :desperson, :deslogin, :despassword, :desemail, :nrphone, :inadmin)", array(
 			":iduser"=>$this->getiduser(),
@@ -421,6 +427,27 @@ class User extends Model {
 			'cost'=>12
 		]);
 
+	}
+
+	public function getOrders()
+	{
+
+		$sql = new Sql();
+
+		$results = $sql->select("
+			SELECT * 
+			FROM tb_orders a 
+			INNER JOIN tb_ordersstatus b USING(idstatus) 
+			INNER JOIN tb_carts c USING(idcart)
+			INNER JOIN tb_users d ON d.iduser = a.iduser
+			INNER JOIN tb_addresses e USING(idaddress)
+			INNER JOIN tb_persons f ON f.idperson = d.idperson
+			WHERE a.iduser = :iduser
+		", [
+			':iduser'=>$this->getiduser()
+		]);
+
+		return $results;
 	}
 
 }

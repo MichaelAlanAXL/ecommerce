@@ -2,8 +2,8 @@
 
 namespace App\Model;
 
-use \Hcode\DB\Sql;
-use \Hcode\Model;
+use \App\DB\Sql;
+use \App\Model;
 
 class OrderStatus extends Model {
 

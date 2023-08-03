@@ -97,7 +97,7 @@ class Cart extends Model {
 			':deszipcode'=>$this->getdeszipcode(),
 			':vlfreight'=>$this->getvlfreight(),
 			':nrdays'=>$this->getnrdays()
-		));
+		));		
 		
 		if (count($results) > 0) {
 			$this->setData($results[0]);
@@ -301,7 +301,7 @@ class Cart extends Model {
     	    $this->setvlsubtotal($totals['vlprice']);
     	    $this->setvltotal($totals['vlprice'] + $this->getvlfreight());
 	    } else {
-	        $this->setvlsubtotal(0);
+	    	$this->setvlsubtotal(0);
 	        $this->setvltotal(0);
 	        $this->setnrdays(0);
 	        $this->setvlfreight(0);
