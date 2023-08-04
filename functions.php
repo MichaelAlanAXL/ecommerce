@@ -11,6 +11,13 @@ function formatPrice($vlprice)
     
 }
 
+function formatDate($date)
+{
+
+    return date('d/m/Y', strtotime($date));
+    
+}
+
 function data(int $year)
 {
 
