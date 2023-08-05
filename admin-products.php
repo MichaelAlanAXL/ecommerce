@@ -5,11 +5,13 @@ use \App\Model\User;
 use \App\Model\Product;
 
 $app->get("/admin/products", function(){
-    
+
+    User::verifyLogin();
+
     $search = (isset($_GET['search'])) ? $_GET['search'] : "";
 	$page = (isset($_GET['page'])) ? (int)$_GET['page'] : 1;
 
-/*	if ($search != '') {
+	if ($search != '') {
 
 		$pagination = Product::getPageSearch($search, $page);
 
@@ -32,19 +34,14 @@ $app->get("/admin/products", function(){
 			'text'=>$x+1
 		]);
 
-	}
-*/
-	User::verifyLogin();
-
-	$products = Product::listAll();
-
+	}	
+	
 	$page = new PageAdmin();
 
 	$page->setTpl("products", [
-	    'products'=>$products,
-		//'products'=>$pagination['data'],
+		'products'=>$pagination['data'],
 		'search'=>$search,
-		//'pages'=>$pages
+		'pages'=>$pages
 	]);
 
 });
