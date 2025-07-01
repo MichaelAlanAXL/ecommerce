@@ -1,0 +1,25 @@
+# Dependências do Composer
+/vendor/
+
+# Dependências do Node (se houver front‑end)
+/node_modules/
+
+# Arquivos de configuração
+.env
+
+# Uploads, cache e logs
+/uploads/
+/cache/
+/logs/
+
+# Arquivos do SO e IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Arquivos temporários e dumps
+*.log
+*.sql
+*.zip
+*.bak
