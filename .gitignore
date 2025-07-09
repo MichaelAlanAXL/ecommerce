@@ -1,6 +1,3 @@
-# Dependências do Composer
-/vendor/
-
 # Dependências do Node (se houver front‑end)
 /node_modules/
 
