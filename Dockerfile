@@ -9,3 +9,5 @@ RUN a2enmod rewrite
 
 # Define permissões caso precise (opcional)
 # RUN chown -R www-data:www-data /var/www/html
+
+RUN docker-php-ext-install pdo pdo_pgsql
