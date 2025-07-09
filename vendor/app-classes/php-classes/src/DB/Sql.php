@@ -4,10 +4,17 @@ namespace App\DB;
 
 class Sql {
 
-	const HOSTNAME = "localhost";
-	const USERNAME = "root";
-	const PASSWORD = "";
-	const DBNAME = "db_ecommerce";
+	if (getenv('DB_HOST')) {
+		define('HOSTNAME', getenv('DB_HOST'));
+		define('USERNAME', getenv('DB_USER'));
+		define('PASSWORD', getenv('DB_PASS'));
+		define('DBNAME', getenv('DB_NAME'));
+	} else {
+		define(const HOSTNAME = "localhost");
+		define(const USERNAME = "root");
+		define(const PASSWORD = "");
+		define(const DBNAME = "db_ecommerce");
+	}
 
 	private $conn;
 
