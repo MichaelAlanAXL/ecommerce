@@ -1,4 +1,4 @@
-   <!-- Swiper -->
+<?php if(!class_exists('Rain\Tpl')){exit;}?>   <!-- Swiper -->
 <div class="swiper">
   <div class="swiper-wrapper">
 
@@ -65,29 +65,29 @@
         <h2>Produtos em Destaque</h2>
 
         <div class="product-grid">
-            {loop="$products"}
+            <?php $counter1=-1;  if( isset($products) && ( is_array($products) || $products instanceof Traversable ) && sizeof($products) ) foreach( $products as $key1 => $value1 ){ $counter1++; ?>
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="{$value.desphoto}" alt="{$value.desproduct}">
+                        <img src="<?php echo htmlspecialchars( $value1["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" alt="<?php echo htmlspecialchars( $value1["desproduct"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                         <div class="product-hover">
-                            <a href="/cart/{$value.idproduct}/add" class="add-to-cart-link">
+                            <a href="/cart/<?php echo htmlspecialchars( $value1["idproduct"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/add" class="add-to-cart-link">
                                 <i class="fa fa-shopping-cart"></i> Comprar
                             </a>
-                            <a href="/oridycts/{$value.desurl}" class="view-details-link">
+                            <a href="/oridycts/<?php echo htmlspecialchars( $value1["desurl"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="view-details-link">
                                 <i class="fa fa-link"></i> Ver detalhes
                             </a>
                         </div>
                     </div>
 
                 <h3 class="product-name">
-                    <a href="/products/{$value.desurl}">{$value.desproduct}</a>
+                    <a href="/products/<?php echo htmlspecialchars( $value1["desurl"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $value1["desproduct"], ENT_COMPAT, 'UTF-8', FALSE ); ?></a>
                 </h3>
 
                 <div class="product-carousel-price">
-                    <ins>R${function="formatPrice($value.vlprice)"}</ins>
+                    <ins>R$<?php echo formatPrice($value1["vlprice"]); ?></ins>
                 </div>
               </div>
-            {/loop}
+            <?php } ?>
         </div>
     </div>
 </section>

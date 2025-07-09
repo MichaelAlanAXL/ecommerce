@@ -1,4 +1,4 @@
- <footer class="site-footer">
+<?php if(!class_exists('Rain\Tpl')){exit;}?> <footer class="site-footer">
   <div class="footer-content">
     <div class="footer-col">
       <h2>Michael A. C. Site Teste</h2>
@@ -22,7 +22,7 @@
     <div class="footer-col">
       <h2>Categorias</h2>
       <ul>
-        {include="categories-menu"}
+        <?php require $this->checkTemplate("categories-menu");?>
       </ul>
     </div>
 
@@ -37,7 +37,7 @@
   </div>
 
   <div class="footer-bottom">
-    <p>&copy; Dev Michael A. C. 2022 - {function="date('Y')"} <a href="http://www.michaelti.com.br" target="_self">www.michaelti.com.br</a></p>
+    <p>&copy; Dev Michael A. C. 2022 - <?php echo date('Y'); ?> <a href="http://www.michaelti.com.br" target="_self">www.michaelti.com.br</a></p>
     <div class="footer-card-icons">
       <i class="fa fa-cc-discover"></i>
       <i class="fa fa-cc-mastercard"></i>

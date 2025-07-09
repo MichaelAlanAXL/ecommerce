@@ -69,9 +69,15 @@ $app->get("/cart", function(){
 	$cart = Cart::getFromSession();
 
 	$page = new Page();
+
+	$cartData = $cart->getValues();
+
+	if (!isset($cartData["deszipcode"])) {
+		$cartData["deszipcode"] = "";
+	}
    	
 	$page->setTpl("cart", [
-	    'cart'=>$cart->getValues(),
+	    'cart'=>$cartData,
 	    'products'=>$cart->getProducts(),
 	    'error'=>Cart::getMsgError()
 	]);
@@ -131,8 +137,14 @@ $app->get("/cart/:idproduct/remove", function($idproduct) {
 $app->post("/cart/freight", function(){
     
     $cart = Cart::getFromSession();
-    
-    $cart->setFreight($_POST['zipcode']);
+
+	$zipcode = isset($_POST['zipcode']) ? $_POST['zipcode'] : null;
+
+	if ($zipcode) {
+		$cart->setFreight($zipcode);
+	} else {
+		$cart->setFreight('');
+	}    
     
     header("Location: /cart");
     exit;
