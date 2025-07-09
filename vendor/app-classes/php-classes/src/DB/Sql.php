@@ -2,19 +2,19 @@
 
 namespace App\DB;
 
-class Sql {
+if (getenv('DB_HOST')) {
+	define('HOSTNAME', getenv('DB_HOST'));
+	define('USERNAME', getenv('DB_USER'));
+	define('PASSWORD', getenv('DB_PASS'));
+	define('DBNAME', getenv('DB_NAME'));
+} else {
+	define('HOSTNAME', "localhost");
+	define('USERNAME', "root");
+	define('PASSWORD', "");
+	define('DBNAME', "db_ecommerce");
+}
 
-	if (getenv('DB_HOST')) {
-		define('HOSTNAME', getenv('DB_HOST'));
-		define('USERNAME', getenv('DB_USER'));
-		define('PASSWORD', getenv('DB_PASS'));
-		define('DBNAME', getenv('DB_NAME'));
-	} else {
-		define(const HOSTNAME = "localhost");
-		define(const USERNAME = "root");
-		define(const PASSWORD = "");
-		define(const DBNAME = "db_ecommerce");
-	}
+class Sql {
 
 	private $conn;
 
