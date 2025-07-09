@@ -1,6 +1,12 @@
 <?php 
 session_start();
 
+if (!function_exists('get_magic_quotes_gpc')) {
+    function get_magic_quotes_gpc() {
+        return false;
+    }
+}
+
 require_once("vendor/autoload.php");
 
 use \Slim\Slim;
@@ -18,5 +24,4 @@ require_once("admin-products.php");
 require_once("admin-orders.php");
 
 $app->run();
-
 ?>
