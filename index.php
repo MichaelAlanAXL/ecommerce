@@ -1,4 +1,7 @@
 <?php 
+error_reporting(E_ALL & ~E_DEPRECATED & ~E_NOTICE);
+ini_set('display_errors', '1');
+
 session_start();
 
 if (!function_exists('get_magic_quotes_gpc')) {
