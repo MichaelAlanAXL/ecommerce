@@ -7,6 +7,7 @@
 # Uploads, cache e logs
 /uploads/
 /cache/
+/views-cache/
 /logs/
 
 # Arquivos do SO e IDE

@@ -141,3 +141,18 @@
   font-weight: bold;
   color: #0046be;
 }
+
+.brand-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.brand-list img {
+  width: 100%;
+  max-width: 12rem;
+  height: auto;
+}

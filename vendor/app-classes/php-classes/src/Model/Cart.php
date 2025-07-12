@@ -16,7 +16,7 @@ class Cart extends Model {
 
 		$cart = new Cart();	
 		
-		if (isset($_SESSION[Cart::SESSION]) && (int)$_SESSION[Cart::SESSION]['dessessionid'] > 0){
+		if (isset($_SESSION[Cart::SESSION]) && isset($_SESSION[Cart::SESSION]['idcart']) && (int)$_SESSION[Cart::SESSION]['idcart'] > 0){
 
 			$cart->get((int)$_SESSION[Cart::SESSION]['idcart']);
 			
@@ -41,8 +41,9 @@ class Cart extends Model {
 				$cart->setData($data);
 
 				$cart->save();
-
+				
 				$cart->setToSession();
+				
 			}
 		}
 
@@ -104,6 +105,7 @@ class Cart extends Model {
 		}
 
 	}
+
 	public function addProduct(Product $product) 
 	{
 	    $sql = new Sql();

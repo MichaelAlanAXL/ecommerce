@@ -207,6 +207,15 @@ class Order extends Model {
 
 	}
 
+	public static function getNewOrdersCount()
+	{
+		$sql = new Sql();
+
+		$results = $sql->select("SELECT COUNT(*) AS qtd FROM tb_orders WHERE idstatus = 1");
+
+		return (int)$results[0]['qtd'];
+	}
+
 }
 
 ?>

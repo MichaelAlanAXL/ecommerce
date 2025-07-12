@@ -73,7 +73,7 @@
                             <a href="/cart/<?php echo htmlspecialchars( $value1["idproduct"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/add" class="add-to-cart-link">
                                 <i class="fa fa-shopping-cart"></i> Comprar
                             </a>
-                            <a href="/oridycts/<?php echo htmlspecialchars( $value1["desurl"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="view-details-link">
+                            <a href="/products/<?php echo htmlspecialchars( $value1["desurl"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="view-details-link">
                                 <i class="fa fa-link"></i> Ver detalhes
                             </a>
                         </div>
@@ -93,20 +93,18 @@
 </section>
     
     <div class="brands-area">
-        <div class="zigzag-bottom"></div>
+        <div class=""></div>
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
+            <div class="">
+                <div class="">
                     <div class="brand-wrapper">
                         <div class="brand-list">
-                            <img src="/res/site/img/brand1.png" alt="">
-                            <img src="/res/site/img/brand2.png" alt="">
-                            <img src="/res/site/img/brand3.png" alt="">
-                            <img src="/res/site/img/brand4.png" alt="">
-                            <img src="/res/site/img/brand5.png" alt="">
-                            <img src="/res/site/img/brand6.png" alt="">
-                            <img src="/res/site/img/brand1.png" alt="">
-                            <img src="/res/site/img/brand2.png" alt="">                            
+                            <img src="/res/site/img/brand1.png" alt="nokia">
+                            <img src="/res/site/img/brand2.png" alt="canon">
+                            <img src="/res/site/img/brand3.png" alt="samsung">
+                            <img src="/res/site/img/brand4.png" alt="apple">
+                            <img src="/res/site/img/brand5.png" alt="htc">
+                            <img src="/res/site/img/brand6.png" alt="lg">
                         </div>
                     </div>
                 </div>
