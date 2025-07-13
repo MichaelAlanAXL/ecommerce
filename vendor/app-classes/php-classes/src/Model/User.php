@@ -6,11 +6,12 @@ use \App\DB\Sql;
 use \App\Model;
 use \App\Mailer;
 
+define("SECRET", getenv("SECRET"));
+define("SECRET_IV", getenv("SECRET_IV"));
+
 class User extends Model {
 
 	const SESSION = "User";
-	const SECRET = "HcodePhp7_Secret";
-	const SECRET_IV = "HcodePhp7_Secret_IV";
 	const ERROR = "UserError";
 	const ERROR_REGISTER = "UserErrorRegister";
 	const SUCCESS = "UserSucesss";
@@ -216,7 +217,6 @@ class User extends Model {
 			":email"=>$email
 		));
 
-
 		if (count($results) === 0)
 		{
 
@@ -244,18 +244,17 @@ class User extends Model {
 
 				$dataRecovery = $results2[0];
 
-				$code = openssl_encrypt($dataRecovery['idrecovery'], 'AES-128-CBC', pack("a16", User::SECRET), 0, pack("a16", User::SECRET_IV));
+				$code = openssl_encrypt($dataRecovery['idrecovery'], 'AES-128-CBC', pack("a16", SECRET), 0, pack("a16", SECRET_IV));
 
 				$code = base64_encode($code);
 
-
 				if ($inadmin === true) {
 
-					$link = "http://www.instagram.com.br/admin/forgot/reset?code=$code";
+					$link = "https://www.michaelti.com.br/admin/forgot/reset?code=$code";
 
 				} else {
 
-					$link = "http://www.instagram.com.br/forgot/reset?code=$code";
+					$link = "https://www.michaelti.com.br/forgot/reset?code=$code";
 					
 				}				
 																			//assunto do email	
@@ -277,7 +276,7 @@ class User extends Model {
 
 		$code = base64_decode($code);
 
-		$idrecovery = openssl_decrypt($code, 'AES-128-CBC', pack("a16", User::SECRET), 0, pack("a16", User::SECRET_IV));
+		$idrecovery = openssl_decrypt($code, 'AES-128-CBC', pack("a16", SECRET), 0, pack("a16", SECRET_IV));
 
 		$sql = new Sql();
 
