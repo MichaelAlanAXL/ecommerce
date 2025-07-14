@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="/res/site/css/reset.css">
     <link rel="stylesheet" href="/res/site/css/header.css">
     <link rel="stylesheet" href="/res/site/css/index.css">
+    <link rel="stylesheet" href="/res/site/css/categories.css">
     <link rel="stylesheet" href="/res/site/css/footer.css">
     <link rel="stylesheet" href="/res/site/css/responsive.css">
   </head>

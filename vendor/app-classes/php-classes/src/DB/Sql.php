@@ -22,7 +22,7 @@ class Sql {
 	{
 
 		$this->conn = new \PDO(
-			"mysql:dbname=". DBNAME. ";host=" . HOSTNAME, 
+			"mysql:dbname=". DBNAME . ";host=" . HOSTNAME, 
 			USERNAME,
 			PASSWORD
 		);

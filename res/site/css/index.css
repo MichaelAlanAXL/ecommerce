@@ -47,14 +47,22 @@
 }
 
 .product-section {
-  padding: 2rem 1rem;
-  background-color: #f9f9f9;
+  padding: 3rem 1rem;
+  background-color: #f7f7f7;
+  text-align: center;
 }
 
 .product-section h2 {
-  text-align: center;
-  font-size: 1.8rem;
+  font-size: 2rem;
+  margin-top: 4rem;
   margin-bottom: 2rem;
+  color: #333;
+}
+
+.product-section .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container {
@@ -65,42 +73,46 @@
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1.5rem;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .product-card {
   background: #fff;
-  border-radius: 10px;
+  border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0,0,0,0.05);
   transition: transform 0.2s ease;
-  text-align: center;
-}
-
-.product-card:hover {
-  transform: translateY(-4px);
-}
-
-.product-image {
   position: relative;
 }
 
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+}
+
 .product-image img {
-  width: 100%;
+  width: 70%;
   height: auto;
   display: block;
 }
 
 .product-hover {
   position: absolute;
-  top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,0.5);
+  bottom: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 1rem;
   align-items: center;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -108,6 +120,21 @@
 
 .product-image:hover .product-hover {
   opacity: 1;
+}
+
+.add-to-cart-link,
+.view-details-link {
+  background-color: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.add-to-cart-link:hover,
+.view-details-link:hover {
+  background-color: #0056b3;
 }
 
 .product-hover a {
@@ -128,6 +155,7 @@
 .product-name {
   margin: 0.75rem 0 0.25rem;
   font-size: 1rem;
+  color: #222;
 }
 
 .product-name a {
@@ -140,6 +168,12 @@
   font-size: 1.1rem;
   font-weight: bold;
   color: #0046be;
+}
+
+.product-carousel-price ins {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #28a745;
 }
 
 .brand-list {
