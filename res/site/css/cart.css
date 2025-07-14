@@ -1,0 +1,268 @@
+h2 {
+    margin: 1rem 0;
+}
+
+.shop_table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    font-family: 'Segoa UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.shop_table thead tr {
+    background-color: #f7f7f7;
+    border-bottom: 2px solid #ddd;
+}
+
+.shop_table thead th {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    color: #333;
+    font-size: 1rem;
+}
+
+.shop_table tbody tr {
+    border-bottom: 1px solid #eee;    
+}
+
+.shop_table tbody tr:hover {
+    background-color: #fafafa;
+}
+
+/* Células da tabela */
+.shop_table tbody td {
+  padding: 0.75rem 1rem;
+  vertical-align: middle;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* Link remove (X) */
+.product-remove a.remove {
+  color: #cc0000;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.product-remove a.remove:hover {
+  color: #ff3333;
+}
+
+/* Imagens dos produtos */
+.product-thumbnail img.shop_thumbnail {
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+/* Nome do produto - link */
+.product-name a {
+  color: #0073e6;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.product-name a:hover {
+  text-decoration: underline;
+}
+
+/* Preço e total */
+.product-price .amount,
+.product-subtotal .amount {
+  font-weight: 600;
+  color: #222;
+}
+
+/* Quantidade - botões e input */
+.quantity.buttons_added {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.quantity.buttons_added input[type="button"] {
+  background-color: #0073e6;
+  border: none;
+  color: white;
+  padding: 0.25rem 0.6rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.quantity.buttons_added input[type="button"]:hover {
+  background-color: #005bb5;
+}
+
+.quantity.buttons_added input[type="number"] {
+  width: 50px;
+  padding: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* Área de cálculo de frete e resumo */
+.cart-collaterals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Frete e cupom */
+.cross-sells {
+  flex: 1 1 300px;
+  background: #f8f8f8;
+  padding: 1.25rem;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
+
+.cross-sells h2 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.coupon label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+.coupon input.input-text {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+  box-sizing: border-box;
+}
+
+.coupon input.button {
+  background-color: #0073e6;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.coupon input.button:hover {
+  background-color: #005bb5;
+}
+
+/* Resumo da compra */
+.cart_totals {
+  flex: 1 1 300px;
+  background: #f8f8f8;
+  padding: 1.25rem;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
+
+.cart_totals h2 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.cart_totals table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cart_totals th,
+.cart_totals td {
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-size: 1rem;
+}
+
+.cart_totals th {
+  font-weight: 600;
+  color: #555;
+}
+
+.cart_totals td {
+  font-weight: 700;
+  color: #222;
+}
+
+.cart_totals small {
+  display: block;
+  font-weight: normal;
+  color: #777;
+  font-size: 0.85rem;
+  margin-top: 0.15rem;
+}
+
+/* Botão finalizar compra */
+.checkout-button {
+  background-color: #28a745;
+  color: white !important;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1.5rem;
+}
+
+.checkout-button:hover,
+.checkout-button:focus {
+  background-color: #218838;
+  outline: none;
+}
+
+/* Responsividade básica */
+@media (max-width: 768px) {
+  .cart-collaterals {
+    flex-direction: column;
+  }
+  .quantity.buttons_added {
+    gap: 0.5rem;
+  }
+  .shop_table thead {
+    display: none; /* Esconder cabeçalho da tabela em mobile */
+  }
+  .shop_table tbody tr {
+    display: block;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #eee;
+  }
+  .shop_table tbody td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+  .shop_table tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #333;
+    flex-basis: 50%;
+  }
+  .product-remove a.remove {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,159 @@
+.product-title {
+  background: #f4f4f4;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.product-title h2 {
+  margin: 0;
+  font-size: 2rem;
+  color: #222;
+}
+
+.breadcrumb {
+  margin: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.breadcrumb a {
+  color: #0073e6;
+  text-decoration: none;
+}
+
+.product-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.product-image img {
+    width: 100%;
+  max-width: 150px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.product-info {
+  flex: 1;
+  min-width: 280px;
+}
+
+.product-info h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-price {
+  color: #28a745;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.add-to-cart-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.add-to-cart-form input[type="number"] {
+  width: 80px;
+  padding: 0.4rem;
+  font-size: 1rem;
+}
+
+.add-to-cart-form button {
+  background-color: #0073e6;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.add-to-cart-form button:hover {
+  background-color: #005bb5;
+}
+
+.product-categories a {
+  color: #555;
+  text-decoration: none;
+  margin-right: 0.5rem;
+}
+
+.product-categories a:hover {
+  text-decoration: underline;
+}
+
+.product-tabs {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.tab-button {
+  background: #eee;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px 4px 0 0;
+}
+
+.tab-button.active {
+  background: white;
+  border-bottom: 2px solid #fff;
+}
+
+.tab-content {
+  display: none;
+  background: white;
+  border: 1px solid #ddd;
+  padding: 1.5rem;
+  border-radius: 0 0 4px 4px;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.review-form input,
+.review-form textarea {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.review-form input[type="submit"] {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.review-form input[type="submit"]:hover {
+  background-color: #218838;
+}
+
+.rating-stars span {
+  font-size: 1.5rem;
+  color: #ffc107;
+  cursor: pointer;
+}
