@@ -1,5 +1,0 @@
-<?php if(!class_exists('Rain\Tpl')){exit;}?>
-<li><a href="/categories/1">AMD</a></li><li><a href="/categories/5">Apple</a></li><li><a href="/categories/3">Motorola</a></li><li><a href="/categories/2">NVIDIA</a></li><li><a href="/categories/4">video e tv</a></li>
-
-
-
