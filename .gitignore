@@ -1,6 +1,9 @@
 # Dependências do Node (se houver front‑end)
 /node_modules/
 
+# Arquivos do site umbler
+temporary.html
+
 # Arquivos de configuração
 .env
 
@@ -21,3 +24,5 @@ Thumbs.db
 *.sql
 *.zip
 *.bak
+*.swp
+
