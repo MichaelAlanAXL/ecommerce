@@ -13,7 +13,9 @@ if (!function_exists('get_magic_quotes_gpc')) {
 require_once("vendor/autoload.php");
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
+if (file_exists(__DIR__ . '/.env')) {
+    $dotenv->load();
+}
 
 use \Slim\Slim;
 
