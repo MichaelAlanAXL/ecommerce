@@ -1,14 +1,18 @@
 <?php 
 session_start();
 
-error_reporting(E_ALL & ~E_DEPRECATED & ~E_NOTICE);
-ini_set('display_errors', '1');
+// error_reporting(E_ALL & ~E_DEPRECATED & ~E_NOTICE);
+// ini_set('display_errors', '1');
 
 if (!function_exists('get_magic_quotes_gpc')) {
     function get_magic_quotes_gpc() {
         return false;
     }
 }
+
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 
 require_once("vendor/autoload.php");
 

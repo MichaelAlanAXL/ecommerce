@@ -29,6 +29,11 @@
   <div class="login-logo">
     <a href="/res/admin/index2.html"><b>Admin</b>LTE</a>
   </div>
+
+  {if="$error != ''"}
+    <div class="alert alert-danger">{$error}</div>
+  {/if}
+
   <!-- /.login-logo -->
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>

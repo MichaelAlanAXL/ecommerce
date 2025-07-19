@@ -23,16 +23,32 @@ $app->get('/admin/login', function() {
 		"footer"=>false
 	]);
 
-	$page->setTpl("login");
+	$page->setTpl("login", [
+		"error" => ""
+	]);
 
 });
 
-$app->post('/admin/login', function(){
+$app->post('/admin/login', function() {
 
-	User::login($_POST["login"], $_POST["password"]);
+	try {
 
-	header("Location: /admin");
-	exit;
+		User::login($_POST["login"], $_POST["password"]);
+	
+		header("Location: /admin");
+		exit;
+		
+	} catch (Exception $e) {
+		
+		$page = new PageAdmin([				
+			"header"=>false,
+			"footer"=>false
+		]);
+
+		$page->setTpl("login", [
+			"error" => $e->getMessage()
+		]);
+	}
 
 });
 
@@ -46,7 +62,7 @@ $app->get('/admin/logout', function() {
 });
 
 
-$app->get("/admin/forgot", function(){
+$app->get("/admin/forgot", function() {
 
 	$page = new PageAdmin([
 		"header"=>false,
